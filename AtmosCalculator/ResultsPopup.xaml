@@ -1,0 +1,71 @@
+﻿<Window x:Class="AtmosCalculator.ResultsPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AtmosCalculator"
+        mc:Ignorable="d"
+        Title="Results" Height="443.966" Width="1001.171" Initialized="Window_Initialized">
+    <Grid Margin="0,0,0,2">
+        <Border BorderBrush="#FFB8B8B8" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="10,10,0,0" VerticalAlignment="Top" Width="284">
+            <Grid HorizontalAlignment="Left" Width="245">
+                <Label Content="Temperature Reading" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="77,0,0,0" FontFamily="Roboto"/>
+                <Label Name="CelsiusLabel" Content="Celsius:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" FontFamily="Roboto"/>
+                <Label Name="KelvinLabel" Content="Kelvin:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" FontFamily="Roboto" />
+                <Label Name="CelsiusReadout" Content="" HorizontalAlignment="Left" Margin="67,18,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="178"/>
+                <Label Name="KelvinReadout" Content="" HorizontalAlignment="Left" Margin="67,41,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="178"/>
+            </Grid>
+        </Border>
+        <Border BorderBrush="#FFB8B8B8" BorderThickness="1" HorizontalAlignment="Left" Height="186" Margin="10,84,0,0" VerticalAlignment="Top" Width="284">
+            <Grid>
+                <Label Content="Pressure Reading" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="87,0,0,0" FontFamily="Roboto"/>
+                <Grid Margin="0,24,0,129">
+                    <Label Content="Pressure (kPa):" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Roboto"/>
+                    <Label Name="PressureResult" Content="" HorizontalAlignment="Left" Margin="96,0,-5,0" VerticalAlignment="Top" Width="137" FontFamily="Roboto"/>
+                </Grid>
+                <ScrollViewer HorizontalAlignment="Left" Height="129" Margin="0,55,0,0" VerticalAlignment="Top" Width="282">
+                    <Grid>
+                        <StackPanel Name="PressureStackPanel" Width="228">
+
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        <Border BorderBrush="#FFB8B8B8" BorderThickness="1" HorizontalAlignment="Left" Height="120" Margin="10,275,0,0" VerticalAlignment="Top" Width="284">
+            <Grid Margin="0,0,0,-1">
+                <Label Content="Tachyon-Doppler Array" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="74,0,0,0" FontFamily="Roboto"/>
+                <Label Content="Theoretical Range:" HorizontalAlignment="Left" Margin="0,57,0,0" VerticalAlignment="Top" FontFamily="Roboto" RenderTransformOrigin="0.486,1.125"/>
+                <Label Content="Real Range:" HorizontalAlignment="Left" Margin="0,89,0,0" VerticalAlignment="Top" FontFamily="Roboto" RenderTransformOrigin="0.493,1.292"/>
+                <Label Name="BombVerdict" Content="verdict" HorizontalAlignment="Left" Margin="0,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.026,0.308" FontWeight="Bold" FontStyle="Italic" FontFamily="Roboto" FontSize="16"/>
+                <Label Name="TheoreticalRange" Content="theoretical" HorizontalAlignment="Left" Margin="114,57,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="131" FontWeight="Bold"/>
+                <Label Name="RealRange" Content="real" HorizontalAlignment="Left" Margin="114,89,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="131"/>
+            </Grid>
+        </Border>
+        <Image Name="MetaStationImage" HorizontalAlignment="Left" Height="385" Margin="528,10,0,0" VerticalAlignment="Top" Width="455" Source="metastation.png"/>
+        <Canvas Name="EllipseCanvas" Margin="528,10,10,24">
+            <Ellipse Name="LightRadius" Canvas.ZIndex="1" Fill="#66E8FF00" Height="0" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="0"/>
+            <Ellipse Name="MediumRadius" Canvas.ZIndex="2" Fill="#66FF6800" Height="0" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="0"/>
+            <Ellipse Name="HeavyRadius" Canvas.ZIndex="3" Fill="#66FF0000" Height="0" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="0"/>
+            <Rectangle Name="LightRadiusRect" Canvas.ZIndex="1" Fill="#66E8FF00" Height="0" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="0"/>
+            <Rectangle Name="MediumRadiusRect" Canvas.ZIndex="2" Fill="#66FF6800" Height="0" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="0"/>
+            <Rectangle Name="HeavyRadiusRect" Canvas.ZIndex="3" Fill="#66FF0000" Height="0" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="0"/>
+        </Canvas>
+        <Border BorderBrush="#FFB8B8B8" BorderThickness="1" HorizontalAlignment="Left" Height="385" Margin="299,10,0,0" VerticalAlignment="Top" Width="224">
+            <Grid HorizontalAlignment="Left" Width="245">
+                <Label Content="Advanced" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="80,0,0,0" FontFamily="Roboto"/>
+                <Label x:Name="Air1MolesLabel" Content="Air1 Moles:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" FontFamily="Roboto"/>
+                <Label x:Name="Air2MolesLabel" Content="Air2 Moles:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" FontFamily="Roboto" />
+                <Label x:Name="Air1MolesReadout" Content="" HorizontalAlignment="Left" Margin="85,18,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="132"/>
+                <Label x:Name="Air2MolesReadout" Content="" HorizontalAlignment="Left" Margin="85,41,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="132"/>
+                <Label x:Name="NumReactsLabel" Content="# Reacts:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" FontFamily="Roboto" />
+                <Label x:Name="NumReactsReadout" Content="" HorizontalAlignment="Left" Margin="85,65,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="132"/>
+                <Label x:Name="PressureBeforeExplosionLabel" Content="Last kPa:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" FontFamily="Roboto" />
+                <Label x:Name="PressureBeforeExplosionReadout" Content="" HorizontalAlignment="Left" Margin="85,89,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="132"/>
+                <Label x:Name="TempBeforeExplosionLabel" Content="Last Temp:" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" FontFamily="Roboto" />
+                <Label x:Name="TempBeforeExplosionReadout" Content="" HorizontalAlignment="Left" Margin="85,113,0,0" VerticalAlignment="Top" FontFamily="Roboto" Width="132"/>
+                <Label Content="just an approximation -->" HorizontalAlignment="Left" Margin="80,359,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontWeight="Bold" FontStyle="Italic" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
